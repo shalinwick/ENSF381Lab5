@@ -205,35 +205,79 @@ Description : DOM Elements.
 		</footer>
 		<script>
 			document.addEventListener('DOMContentLoaded', function afterRender() {
-				// Task 1: Set the text content of all elements with the class 'companyName' and remove their border
+				document.addEventListener('DOMContentLoaded', function afterRender() {
+			// Task 1: Set the text content of all elements with the class 'companyName' to “Mahdi” and remove their borders.
+			var companyNameElements = document.getElementsByClassName('companyName');
+			for (var i = 0; i < companyNameElements.length; i++) {
+				companyNameElements[i].textContent = 'SHALIN WICK'; 
+				companyNameElements[i].style.border = 'none'; 
+			}
 
+			// Task 2: Change the background color of the navigation bar.
+			var navBar = document.getElementsByTagName('nav')[0];
+			navBar.style.backgroundColor = '#AAFF00'; 
 
-				// Task 2: Change the background color of the navigation bar
-				
+			// Task 3: Hide the section titled 'What is full-stack?'.
+			var headers = document.getElementsByTagName('h2');
+			for (var i = 0; i < headers.length; i++) {
+				if (headers[i].textContent === 'What is full-stack?') {
+					headers[i].parentNode.style.display = 'none';
+				}
+			}
 
-				// Task 3: Hide the section titled 'What is full-stack?'
+			// Task 4: Create a new <p> element and append it to the end of the “About Us” section.
+			var aboutUsSection = document.getElementsByTagName('section')[0]; // Assuming 'About Us' is the first section
+			var newParagraph = document.createElement('p');
+			newParagraph.textContent = 'This is a new paragraph';
+			newParagraph.style.color = 'red';
+			aboutUsSection.appendChild(newParagraph);
 
+			// Task 5: Add placeholders to input elements based on their corresponding label IDs.
+			var inputs = document.getElementsByTagName('input');
+			for (var i = 0; i < inputs.length; i++) {
+				var label = document.querySelector(`label[for="${inputs[i].id}"]`);
+				if (label) {
+					inputs[i].placeholder = label.textContent.replace(':', '');
+				}
+			}
+			var textareas = document.getElementsByTagName('textarea');
+			for (var i = 0; i < textareas.length; i++) {
+				var label = document.querySelector(`label[for="${textareas[i].id}"]`);
+				if (label) {
+					textareas[i].placeholder = label.textContent.replace(':', '');
+				}
+			}
 
-				// Task 4: Create a new <p> element and append it to the 'About Us' section
+			// Task 6: Set the src attribute of the image to point to "./images/example.svg".
+			var image = document.getElementsByTagName('img')[0]; // Assuming there's only one image
+			image.setAttribute('src', './images/example.svg');
 
+			// Task 7: Add a new item in the navigation menu.
+			var navUl = document.querySelector('nav ul');
+			var newNavItem = document.createElement('li');
+			var newNavLink = document.createElement('a');
+			newNavLink.setAttribute('href', '#');
+			newNavLink.textContent = 'Blog';
+			newNavItem.appendChild(newNavLink);
+			navUl.appendChild(newNavItem);
 
-				// Task 5: Add placeholders to input elements based on their corresponding label IDs
+			// Task 8: Change the submit button text upon clicking and make it disabled.
+			var submitButton = document.querySelector('input[type="button"]');
+			submitButton.onclick = function () {
+				this.value = 'Submitting...';
+				this.disabled = true;
+			};
 
+			// Task 9: Change the text color of each item in the 'Related Links' to green.
+			var relatedLinks = document.querySelectorAll('aside ul li a');
+			for (var i = 0; i < relatedLinks.length; i++) {
+				relatedLinks[i].style.color = 'green';
+			}
 
-				// Task 6: Set the src attribute of the image
-
-
-				// Task 7: Add a new item in the navigation menu
-
-
-				// Task 8: Change the submit button text upon clicking and make it disabled
-
-
-				// Task 9: Change the text color of each item in the 'Related Links' to green
-
-
-				// Task 10: Add a red solid border to the footer
-			});
+			// Task 10: Add a red solid border to the footer.
+			var footer = document.getElementsByTagName('footer')[0];
+			footer.style.border = '2px solid red';
+		});
 		</script>
 	</body>
 </html>
