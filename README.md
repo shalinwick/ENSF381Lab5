@@ -7,4 +7,4 @@
 |        Name                             |
 |-----------------------------------------|
 | Mohit Kaila  ( UCID : 30172603 )        |
-| Salin Wickremeratna ( UCID : 30174488 ) |
+| Shalin Wickremeratna ( UCID : 30174488 ) |
