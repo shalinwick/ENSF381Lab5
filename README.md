@@ -1,6 +1,6 @@
 # Project Overview
 
-- The Goal of the lab was to 
+- The goal of the lab was to understand JavaScript basics - 
 
 ## Team Members
 
